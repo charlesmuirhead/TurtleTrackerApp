@@ -56,11 +56,14 @@ for the_key, the_value in date_dict.items():
     if the_value == user_date:
         matching_keys.append(the_key)
 
+# Check that at least one key was returned; tell the user if not.
+if len(matching_keys) == 0:
+    print ("No observations recorded for {}".format(user_date))
+else:
 
-
-#Reveal locations for each key in matching_keys
-for matching_key in matching_keys:
-    obs_lat, obs_lon = coord_dict[matching_key]
-    print(f"Record {matching_key} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {user_date}")
+    #Reveal locations for each key in matching_keys
+    for matching_key in matching_keys:
+        obs_lat, obs_lon = coord_dict[matching_key]
+        print(f"Record {matching_key} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {user_date}")
 
 
