@@ -9,6 +9,9 @@
 # Date:   Fall 2021
 #--------------------------------------------------------------
 
+# Ask the user for a date, specifying the format
+user_date = "7/3/2003" #input("Enter a date (M/D/YYYY)")
+
 #Create a path variable pointing to the data file
 file_name = './data/raw/sara.txt'
 
@@ -40,7 +43,6 @@ for lineString in line_list:
     obs_lon = lineData[7]    # Observation Longitude
     
     if ob_lc in ("1","2","3"):
-    
         print(f"Record {record_id} indicated Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
         date_dict[record_id] = obs_date
         coord_dict[record_id] = (obs_lat,obs_lon)
